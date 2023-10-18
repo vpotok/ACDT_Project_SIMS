@@ -1,0 +1,19 @@
+﻿services:
+  project_sims:
+    image: project_sims
+    build:
+      context: .
+      dockerfile: Project_SIMS/Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+  
+  db:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    ports:
+      - "1433:1433"
+    
+    environment:
+      SA_PASSWORD: "123456a@"
+      ACCEPT_EULA: "Y"
