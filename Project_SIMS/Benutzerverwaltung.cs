@@ -2,7 +2,9 @@ using System;
 using System.Data;
 using System.Windows.Input;
 using Microsoft.Data.SqlClient;
+using Spectre.Console;
 namespace Project_SIMS;
+
 public class Benutzerverwaltung
     {
         public void insertUser(string vorname, string nachname, bool isAdmin, bool isActive)
@@ -75,7 +77,7 @@ public class Benutzerverwaltung
             dc.openConnection();
             using SqlCommand cmd = new SqlCommand("SELECT * FROM benutzer", dc.con);
             using SqlDataReader reader = cmd.ExecuteReader();
-
+            // ToDO: Spectre Table befüllen
             while (reader.Read())
             {
                 for (int i = 0; i < reader.FieldCount; i++)

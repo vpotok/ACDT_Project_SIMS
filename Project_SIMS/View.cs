@@ -7,7 +7,6 @@ using Spectre.Console;
 
 public class View
 {
-    
     public static void Main()
     {
         try
@@ -31,7 +30,8 @@ public class View
             int auswahl = int.Parse(AnsiConsole.Ask<string>("Wähle eine Tabel [green](Nr.)[/]?"));
             if (auswahl == 1)
             {
-                TableBenutzerFkt();
+                Benutzerverwaltung benutzerverwaltung = new Benutzerverwaltung();
+                TableBenutzerFkt(benutzerverwaltung);
             }else if (auswahl == 2)
             {
                 TableVorfälle();
@@ -80,7 +80,7 @@ public class View
         AnsiConsole.Write(table);
         AnsiConsole.Write(new Panel("[red]0 Exit[/]"));
     }
-    private void TableBenutzerFkt()
+    private void TableBenutzerFkt(Benutzerverwaltung benutzerverwaltung)
     {
         TableBenutzer();
         int auswahl;
@@ -95,10 +95,11 @@ public class View
                 {
                     auswahl = 0;
                 }
+                benutzerverwaltung.selectAllUser();
 
             }else if (auswahl == 2)
             {
-                bool hinuz = BenutzerHinzu();
+                bool hinuz = BenutzerHinzu(benutzerverwaltung);
                 if (hinuz)
                 {
                     auswahl = 0;
@@ -118,16 +119,20 @@ public class View
         }
     }
 
-    private bool BenutzerHinzu()
+    private bool BenutzerHinzu(Benutzerverwaltung benutzerverwaltung)
     {
-        Panel hinzutitel = new Panel("[bold green]Benutzer hinzufügen[/]");
-        AnsiConsole.Write(hinzutitel);
+        Panel hinzu = new Panel("[bold green]vorname(string);nachname(string);isAdmin(0 oder 1);isActive(0 oder 1)[/]");
+        hinzu.Header("[red]Benutzer hinzufügen[/]");
+        AnsiConsole.Write(hinzu);
   
         Panel ex = new Panel("[red]0 Exit[/]");
         AnsiConsole.Write(ex);
         string newUser = AnsiConsole.Ask<string>("[red]Achtung Syntax![/]Geben die dem neuen Benutzer ein:");
         Console.WriteLine(newUser);
-        
+        string[] arr = newUser.Split(";");
+        //bool cast 0=false 1=true
+        Console.WriteLine(Boolean.Parse(arr[2])+""+Boolean.Parse(arr[3]));
+        benutzerverwaltung.insertUser(arr[0],arr[1],Boolean.Parse(arr[2]), Boolean.Parse(arr[3]));
         try
         {
             // User hinzufügen
@@ -279,6 +284,7 @@ public class View
         {
             case "benutzer":
                 panel.Header("[green]Benutzer[/]");
+                
                 break;
             case "vorfälle":
                 panel.Header("[green]Vorfälle[/]");
