@@ -1,4 +1,5 @@
-[![C#](https://badgen.net/badge/Language/C%23/green)](https://docs.microsoft.com/en-us/dotnet/csharp/)
+[![C#](https://badgen.net/badge/Language/C%23/green)](https://docs.microsoft.com/en-us/dotnet/csharp/) [![Microsoft SQL Server](https://badgen.net/badge/Database/Microsoft%20SQL%20Server/orange)](https://www.microsoft.com/en-us/sql-server)
+
 
 
 
