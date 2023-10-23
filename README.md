@@ -51,7 +51,20 @@ Unser Sicherheitsereignis-Verwaltungsprogramm ist ein leistungsstarkes Tool, das
 Stellen Sie sicher, dass Docker auf Ihrem System installiert ist. Sowohl das Programm als auch der dazugehörige Datenbankserver laufen in einem Docker-Container, der sich im Docker-Netzwerk befindet.
 DOCKER NETWORK USW.
 
-## Version 1.2.3 TODO (muss der App-Version entsprechen) (fiktiver) - Roadmap
+## Version 1.2.3 TODO
+
+## Roadmap
+Phase 1: Grundlegende Struktur und Benutzerverwaltung (2 Monate)
+- Implementierung von Benutzerverwaltungsfunktionen: "insert user", "select user", "select all user" und "update user".
+
+Phase 2: Incident-Management-Funktionen (3 Monate)
+- Entwicklung des Incident Management Systems mit Funktionen wie "select unsolved incidents", "update vorfallstatus" und "escalation".
+
+Phase 3: Sicherheitsmaßnahmen und Feinabstimmung (2 Monate)
+- Integration von Sicherheitsmaßnahmen, Benachrichtigungssystem und umfassende Tests zur Sicherstellung der Zuverlässigkeit.
+
+Phase 4: Erweiterung und Skalierung (3 Monate)
+- Implementierung zusätzlicher Funktionen basierend auf Benutzerfeedback, Skalierung des Systems und Leistungsoptimierung.
 
 ## ER-Diagramm
 
