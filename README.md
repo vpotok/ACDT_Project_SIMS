@@ -1,4 +1,5 @@
-[![GitHub stars](https://badgen.net/github/stars/badges/shields)](https://github.com/badges/shields)
+[![C#](https://badgen.net/badge/Language/C%23/green)](https://docs.microsoft.com/en-us/dotnet/csharp/)
+
 
 
 # Security Incident Management System
