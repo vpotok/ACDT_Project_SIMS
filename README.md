@@ -1,4 +1,5 @@
-[![C#](https://badgen.net/badge/Language/C%23/green)](https://docs.microsoft.com/en-us/dotnet/csharp/) [![Microsoft SQL Server](https://badgen.net/badge/Database/Microsoft%20SQL%20Server/orange)](https://www.microsoft.com/en-us/sql-server) [![Docker](https://badgen.net/badge/Tool/Docker/blue?icon=docker)](https://www.docker.com/)
+[![C#](https://badgen.net/badge/Language/C%23/green)](https://docs.microsoft.com/en-us/dotnet/csharp/) [![Microsoft SQL Server](https://badgen.net/badge/Database/Microsoft%20SQL%20Server/orange)](https://www.microsoft.com/en-us/sql-server) [![Docker](https://badgen.net/badge/Tool/Docker/blue?icon=docker)](https://www.docker.com/) [![Spectre.Console.net](https://badgen.net/badge/Website/Spectre.Console.net/purple)](https://spectresystems.github.io/spectre.console/)
+
 
 
 
