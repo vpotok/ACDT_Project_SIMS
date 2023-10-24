@@ -70,6 +70,7 @@ Phase 4: Erweiterung und Skalierung (3 Monate)
 
 ## ER-Diagramm
 [ER-Diagramm](/ER-Diagramm.png)
+![alt text](https://github.com/vpotok/ACDT_Project_SIMS/blob/master/uml_sims.png?raw=true)
 
 ## Klassendiagramm
 [Klassendiagramm](/uml_sims.png)
