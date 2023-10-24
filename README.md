@@ -9,7 +9,7 @@
 Unser Sicherheitsereignis-Verwaltungsprogramm ist ein leistungsstarkes Tool, das Ihnen hilft, sicherheitsrelevante Vorfälle effizient zu erfassen und zu verwalten. Es bietet eine Vielzahl von Funktionen, die Ihnen dabei helfen, den Überblick über Sicherheitsvorfälle zu behalten und angemessen darauf zu reagieren.
 
 ## Funktionen
-1. Manuelle Erfassung von sicherheitsrelevanten Vorfällen: Erfassen Sie wichtige Informationen wie Schweregrad, Vorfallsstatus, Zeitstempel, Beschreibung und wer ihn gemeldet hat.
+1. Manuelle Erfassung von sicherheitsrelevanten Vorfällen: Erfassen Sie wichtige Informationen wie Schweregrad, Vorfallsstatus, Zeitstempel, Beschreibung und wer diesen gemeldet hat.
 2. Eskalation an den nächsten Benutzer: Automatisches Weiterleiten von Vorfällen an den entsprechenden Benutzer basierend auf einem vordefinierten Eskalationslevel.
 3. Notifizierung: Grundlegende Benachrichtigungsfunktionen über Discord.
 4. Log-Tabelle: Behalten Sie den Überblick über Aktivitäten im System, einschließlich Vorfall hinzufügen/bearbeiten/schließen, Eskalation, Notifizierung sowie Benutzer hinzufügen/löschen.
