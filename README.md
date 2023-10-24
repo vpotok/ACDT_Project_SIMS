@@ -69,7 +69,9 @@ COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Project_SIMS.dll"]```
 
 ### docker-compose.yml
-```services:
+
+```
+services:
   project_sims:
     image: project_sims
     build:
@@ -87,7 +89,8 @@ ENTRYPOINT ["dotnet", "Project_SIMS.dll"]```
     
     environment:
       SA_PASSWORD: "123456a@"
-      ACCEPT_EULA: "Y" ```
+      ACCEPT_EULA: "Y" 
+```
 
 ## Roadmap
 Phase 1: Grundlegende Struktur und Benutzerverwaltung (2 Monate)
