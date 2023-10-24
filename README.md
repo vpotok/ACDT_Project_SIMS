@@ -68,7 +68,7 @@ Phase 4: Erweiterung und Skalierung (3 Monate)
 
 ## Ergebnisse zu SAST (Semgrep)
 Semgrep-Rulesets können potenzielle Sicherheitslücken in SQL-Anweisungen aufgrund fehlender Prepared Statements anzeigen, obwohl die tatsächliche Anfälligkeit für SQL-Injection nicht gegeben ist.
-
+(SAST (semgrep))
 
 ## Lizenz
 MIT License
