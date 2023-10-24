@@ -120,7 +120,9 @@ namespace Project_SIMS
                     }
                     else if (auswahl == 2)
                     {
-                        user = AnsiConsole.Ask<int>("Welchen Benutzer möchtest du auswählen?");
+                        Panel ex = new Panel("[red]0 Exit[/]");
+                        AnsiConsole.Write(ex);
+                        user = AnsiConsole.Ask<int>("Welchen Benutzer möchtest du auswählen [green](int)[/]?");
                         benutzerverwaltung.selectUser(user);
                     }
                     else if (auswahl == 3)
@@ -133,12 +135,23 @@ namespace Project_SIMS
                     }
                     else if (auswahl == 4)
                     {
+                        Panel ex = new Panel("[red]0 Exit[/]");
+                        AnsiConsole.Write(ex);
                         user = AnsiConsole.Ask<int>("Welchen Benutzer möchtest du bearbeiten?");
-                        BenutzerUpdate(user);
+                        if (user == 0)
+                        {
+                            auswahl = 0;
+                        }
+                        else
+                        {
+                            BenutzerUpdate(user);
+                        }
                     }
                     else if (auswahl == 5)
                     {
-                        user = AnsiConsole.Ask<int>("Welchen Benutzer möchtest du löschen?");
+                        Panel ex = new Panel("[red]0 Exit[/]");
+                        AnsiConsole.Write(ex);
+                        user = AnsiConsole.Ask<int>("Welchen Benutzer möchtest du löschen [green](int)[/]?");
                         benutzerverwaltung.deleteUser(user);
                     }
                     else if (auswahl == 0)
@@ -162,9 +175,9 @@ namespace Project_SIMS
                 Panel hinzu = new Panel("[bold green]vorname(string);nachname(string);isAdmin(false oder true);isActive(false oder true)[/]");
                 hinzu.Header("[red]Benutzer hinzufügen[/]");
                 AnsiConsole.Write(hinzu);
-
                 Panel ex = new Panel("[red]0 Exit[/]");
                 AnsiConsole.Write(ex);
+                
                 string newUser = AnsiConsole.Ask<string>("[red]Achtung Syntax![/]Gib dem neuen Benutzer ein:");
                 if (newUser == "0")
                 {
@@ -277,19 +290,7 @@ namespace Project_SIMS
             try
             {
                 // Create a table
-                var table = new Table();
-                table.Title(new TableTitle("[Cyan]Vorfälle[/]"));
-                // Add some columns
-                table.AddColumn(new TableColumn("Nr.").Centered());
-                table.AddColumn(new TableColumn("Funktion").Centered());
-
-                // Add some rows
-                table.AddRow("[White]1[/]", "[Blue]Show all[/]");
-                table.AddRow("[White]2[/]", "[Magenta]Vorfall schließen[/]");
-
-                // Render the table to the console
-                AnsiConsole.Write(table);
-                AnsiConsole.Write(new Panel("[red]0 Exit[/]"));
+                VorfallTabelle();
                 while (true)
                 {
                     int auswahl = int.Parse(AnsiConsole.Ask<string>("Wähle eine Funktion [green](Nr.)[/]?"));
@@ -301,38 +302,54 @@ namespace Project_SIMS
                     else if (auswahl == 2)
                     {
                         Vorfall vf = new Vorfall();
-                        int eingabe = AnsiConsole.Ask<int>("Welchen Vorfall möchten Sie bearbeiten? (ID) [green](Nr.)[/]?");
-                        vf.updateVorfallstatus(eingabe);
+                        Panel ex = new Panel("[red]0 Exit[/]");
+                        AnsiConsole.Write(ex);
+                        int eingabe = AnsiConsole.Ask<int>("Welchen Vorfall möchten Sie bearbeiten? (ID) [green](int)[/]?");
+                        if (eingabe == 0)
+                        {
+                            auswahl = 0;
+                        }
+                        else
+                        {
+                            vf.updateVorfallstatus(eingabe);   
+                        }
                     }
                     else if (auswahl == 0)
                     {
                         TableFkt();
                         break;
                     }
+                    VorfallTabelle();
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine("An error occurred: " + e.Message);
             }
+            
         }
 
+        private void VorfallTabelle()
+        {
+            var table = new Table();
+            table.Title(new TableTitle("[Cyan]Vorfälle[/]"));
+            // Add some columns
+            table.AddColumn(new TableColumn("Nr.").Centered());
+            table.AddColumn(new TableColumn("Funktion").Centered());
+
+            // Add some rows
+            table.AddRow("[White]1[/]", "[Blue]Show all[/]");
+            table.AddRow("[White]2[/]", "[Magenta]Vorfall schließen[/]");
+
+            // Render the table to the console
+            AnsiConsole.Write(table);
+            AnsiConsole.Write(new Panel("[red]0 Exit[/]"));
+        }
         private void TableLog()
         {
             try
             {
-                // Create a table
-                var table = new Table();
-                table.Title(new TableTitle("[Yellow]Log[/]"));
-                // Add some columns
-                table.AddColumn(new TableColumn("Nr.").Centered());
-                table.AddColumn(new TableColumn("[Green]Log anzeigen von:[/]").Centered());
-                // Add some rows
-                table.AddRow("[White]1[/]", "[Blue]Vorfälle[/]");
-                table.AddRow("[White]2[/]", "[Cyan]Benutzer[/]");
-                // Render the table to the console
-                AnsiConsole.Write(table);
-                AnsiConsole.Write(new Panel("[red]0 Exit[/]"));
+                LogTabelle();
                 while (true)
                 {
                     int auswahl = int.Parse(AnsiConsole.Ask<string>("Wähle eine Funktion [green](Nr.)[/]?"));
@@ -351,6 +368,7 @@ namespace Project_SIMS
                         TableFkt();
                         break;
                     }
+                    LogTabelle();
                 }
             }
             catch (Exception e)
@@ -358,6 +376,23 @@ namespace Project_SIMS
                 Console.WriteLine("An error occurred: " + e.Message);
             }
         }
+
+        private void LogTabelle()
+        {
+            // Create a table
+            var table = new Table();
+            table.Title(new TableTitle("[Yellow]Log[/]"));
+            // Add some columns
+            table.AddColumn(new TableColumn("Nr.").Centered());
+            table.AddColumn(new TableColumn("[Green]Log anzeigen von:[/]").Centered());
+            // Add some rows
+            table.AddRow("[White]1[/]", "[Blue]Vorfälle[/]");
+            table.AddRow("[White]2[/]", "[Cyan]Benutzer[/]");
+            // Render the table to the console
+            AnsiConsole.Write(table);
+            AnsiConsole.Write(new Panel("[red]0 Exit[/]"));
+        }
+        
 
         //private bool SelectTable(string type)
         //{
