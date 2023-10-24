@@ -66,6 +66,7 @@ Phase 4: Erweiterung und Skalierung (3 Monate)
 [ER-Diagramm](/ER-Diagramm.png)
 
 ## Klassendiagramm
+[Klassendiagramm](/uml_sims.png)
 
 ## Ergebnisse zu SAST (Semgrep)
 Semgrep-Rulesets können potenzielle Sicherheitslücken in SQL-Anweisungen aufgrund fehlender Prepared Statements anzeigen, obwohl die tatsächliche Anfälligkeit für SQL-Injection nicht gegeben ist.
