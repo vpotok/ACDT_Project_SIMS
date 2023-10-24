@@ -49,8 +49,7 @@ Stellen Sie sicher, dass Docker auf Ihrem System installiert ist. Sowohl das Pro
 DOCKER NETWORK USW.
 
 ### Dockerfile
-```
-FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
+```FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
 WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
@@ -67,8 +66,7 @@ RUN dotnet publish "Project_SIMS.csproj" -c Release -o /app/publish /p:UseAppHos
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Project_SIMS.dll"]
-```
+ENTRYPOINT ["dotnet", "Project_SIMS.dll"]```
 
 ## Roadmap
 Phase 1: Grundlegende Struktur und Benutzerverwaltung (2 Monate)
