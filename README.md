@@ -70,7 +70,6 @@ ENTRYPOINT ["dotnet", "Project_SIMS.dll"]```
 
 ### docker-compose.yml
 
-```
 services:
   project_sims:
     image: project_sims
