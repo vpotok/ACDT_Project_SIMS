@@ -48,6 +48,28 @@ Unser Sicherheitsereignis-Verwaltungsprogramm ist ein leistungsstarkes Tool, das
 Stellen Sie sicher, dass Docker auf Ihrem System installiert ist. Sowohl das Programm als auch der dazugehörige Datenbankserver laufen in einem Docker-Container, der sich im Docker-Netzwerk befindet.
 DOCKER NETWORK USW.
 
+### Dockerfile
+''' Docker
+FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
+WORKDIR /app
+
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /src
+COPY ["Project_SIMS/Project_SIMS.csproj", "Project_SIMS/"]
+RUN dotnet restore "Project_SIMS/Project_SIMS.csproj"
+COPY . .
+WORKDIR "/src/Project_SIMS"
+RUN dotnet build "Project_SIMS.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "Project_SIMS.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Project_SIMS.dll"]
+'''
+
 ## Roadmap
 Phase 1: Grundlegende Struktur und Benutzerverwaltung (2 Monate)
 - Implementierung von Benutzerverwaltungsfunktionen: "insert user", "select user", "select all user" und "update user".
