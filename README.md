@@ -36,7 +36,7 @@ Unser Sicherheitsereignis-Verwaltungsprogramm ist ein leistungsstarkes Tool, das
    - Sendet Nachrichten an die jeweils zuständigen Personen, basierend auf dem Schweregrad des Vorfalls.
 
 
-## Version 1.2.3 TODO
+## Version 1.0.0.0
 
 ## Systemvoraussetzungen
 
