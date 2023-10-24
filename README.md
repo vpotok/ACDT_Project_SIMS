@@ -63,6 +63,7 @@ Phase 4: Erweiterung und Skalierung (3 Monate)
 
 
 ## ER-Diagramm
+[Entity Relationship Diagram](/ER-Diagram.png)
 
 ## Klassendiagramm
 
