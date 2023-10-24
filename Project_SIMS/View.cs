@@ -144,7 +144,7 @@ namespace Project_SIMS
                         }
                         else
                         {
-                            BenutzerUpdate(user);
+                            BenutzerUpdate(user, benutzerverwaltung);
                         }
                     }
                     else if (auswahl == 5)
@@ -204,7 +204,7 @@ namespace Project_SIMS
             }
         }
 
-        private void BenutzerUpdate(int userID)
+        private void BenutzerUpdate(int userID, Benutzerverwaltung benutzerverwaltung)
         {
             try
             {
