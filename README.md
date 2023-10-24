@@ -68,6 +68,27 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Project_SIMS.dll"]```
 
+### docker-compose.yml
+```services:
+  project_sims:
+    image: project_sims
+    build:
+      context: .
+      dockerfile: Project_SIMS/Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+  
+  db:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    ports:
+      - "1433:1433"
+    
+    environment:
+      SA_PASSWORD: "123456a@"
+      ACCEPT_EULA: "Y"```
+
 ## Roadmap
 Phase 1: Grundlegende Struktur und Benutzerverwaltung (2 Monate)
 - Implementierung von Benutzerverwaltungsfunktionen: "insert user", "select user", "select all user" und "update user".
