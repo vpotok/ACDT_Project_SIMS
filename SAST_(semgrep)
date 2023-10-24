@@ -1,0 +1,85 @@
+               
+┌─────────────┐
+│ Scan Status │
+└─────────────┘
+  Scanning 29 files tracked by git with 1101 Code rules:
+                                                                                
+  Language      Rules   Files          Origin      Rules                        
+ ─────────────────────────────        ───────────────────                       
+  <multilang>      57      58          Community    1101                        
+  csharp           33      10                                                   
+  json              4       4                                                   
+  yaml             28       1                                                   
+  dockerfile        5       1                                                   
+                                                                                
+                   
+                   
+┌─────────────────┐
+│ 5 Code Findings │
+└─────────────────┘
+                                
+    Project_SIMS/BenutzerLog.cs 
+       csharp.lang.security.sqli.csharp-sqli.csharp-sqli                        
+          Detected a formatted string in a SQL statement. This could lead to SQL
+  injection if                                                                  
+          variables in the SQL statement are not properly sanitized. Use a      
+  prepared statements                                                           
+          instead. You can obtain a PreparedStatement using 'SqlCommand' and    
+  'SqlParameter'.                                                               
+          Details: https://sg.run/d2Xd                                          
+                                                                                
+           14┆ using SqlCommand cmd = new SqlCommand("SELECT * FROM             
+  benutzer_log_view", dc.con);                                                  
+                                       
+    Project_SIMS/Benutzerverwaltung.cs 
+       csharp.lang.security.sqli.csharp-sqli.csharp-sqli                        
+          Detected a formatted string in a SQL statement. This could lead to SQL
+  injection if                                                                  
+          variables in the SQL statement are not properly sanitized. Use a      
+  prepared statements                                                           
+          instead. You can obtain a PreparedStatement using 'SqlCommand' and    
+  'SqlParameter'.                                                               
+          Details: https://sg.run/d2Xd                                          
+                                                                                
+          105┆ using SqlCommand cmd = new SqlCommand("SELECT * FROM benutzer",  
+  dc.con);                                                                      
+                            
+    Project_SIMS/Vorfall.cs 
+       csharp.lang.security.sqli.csharp-sqli.csharp-sqli                        
+          Detected a formatted string in a SQL statement. This could lead to SQL
+  injection if                                                                  
+          variables in the SQL statement are not properly sanitized. Use a      
+  prepared statements                                                           
+          instead. You can obtain a PreparedStatement using 'SqlCommand' and    
+  'SqlParameter'.                                                               
+          Details: https://sg.run/d2Xd                                          
+                                                                                
+           15┆ using SqlCommand cmd = new SqlCommand("SELECT * FROM vorfall     
+  WHERE VorfallStatus = 0", dc.con);                                            
+            ⋮┆----------------------------------------
+           87┆ using SqlCommand cmd = new SqlCommand("SELECT * FROM vorfall     
+  WHERE VorfallStatus = 0", dc.con);                                            
+                               
+    Project_SIMS/VorfallLog.cs 
+       csharp.lang.security.sqli.csharp-sqli.csharp-sqli                        
+          Detected a formatted string in a SQL statement. This could lead to SQL
+  injection if                                                                  
+          variables in the SQL statement are not properly sanitized. Use a      
+  prepared statements                                                           
+          instead. You can obtain a PreparedStatement using 'SqlCommand' and    
+  'SqlParameter'.                                                               
+          Details: https://sg.run/d2Xd                                          
+                                                                                
+           14┆ using SqlCommand cmd = new SqlCommand("SELECT * FROM             
+  vorfall_log_view", dc.con);                                                   
+
+                
+                
+┌──────────────┐
+│ Scan Summary │
+└──────────────┘
+Some files were skipped or only partially analyzed.
+  Scan was limited to files tracked by git.
+  Partially scanned: 1 files only partially analyzed due to parsing or internal Semgrep errors
+
+Ran 1101 rules on 29 files: 5 findings.

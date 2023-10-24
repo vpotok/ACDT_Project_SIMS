@@ -36,7 +36,7 @@ Unser Sicherheitsereignis-Verwaltungsprogramm ist ein leistungsstarkes Tool, das
    - Sendet Nachrichten an die jeweils zuständigen Personen, basierend auf dem Schweregrad des Vorfalls.
 
 
-## Version 1.2.3 TODO
+## Version 1.0.0.0
 
 ## Systemvoraussetzungen
 
@@ -47,6 +47,12 @@ Unser Sicherheitsereignis-Verwaltungsprogramm ist ein leistungsstarkes Tool, das
 
 Stellen Sie sicher, dass Docker auf Ihrem System installiert ist. Sowohl das Programm als auch der dazugehörige Datenbankserver laufen in einem Docker-Container, der sich im Docker-Netzwerk befindet.
 DOCKER NETWORK USW.
+
+### Dockerfile
+
+
+### docker-compose.yml
+
 
 ## Roadmap
 Phase 1: Grundlegende Struktur und Benutzerverwaltung (2 Monate)
@@ -63,12 +69,16 @@ Phase 4: Erweiterung und Skalierung (3 Monate)
 
 
 ## ER-Diagramm
+[ER-Diagramm](/ER-Diagramm.png)
+![alt text](https://github.com/vpotok/ACDT_Project_SIMS/blob/master/ER-Diagramm.png?raw=true)
 
 ## Klassendiagramm
+[Klassendiagramm](/uml_sims.png)
+![alt text](https://github.com/vpotok/ACDT_Project_SIMS/blob/master/uml_sims.png?raw=true)
 
 ## Ergebnisse zu SAST (Semgrep)
-
-
+Semgrep-Rulesets können potenzielle Sicherheitslücken in SQL-Anweisungen aufgrund fehlender Prepared Statements anzeigen, obwohl die tatsächliche Anfälligkeit für SQL-Injection nicht gegeben ist.
+[SAST semgrep](/SAST_(semgrep))
 
 ## Lizenz
 MIT License
